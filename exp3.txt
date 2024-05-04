@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std ;
+
+int main(){
+    
+    string plain_text ;
+    cout << "Enter Plain Text" << endl ;
+    cin >> plain_text  ;
+    
+    int key ;
+    cout << "Enter  Key" << endl ;
+    cin >> key ;
+    
+    string encrypted_text = "" ;
+    
+    for(int i = 0 ; i< plain_text.length() ; i++){
+        char currentChar = plain_text[i] ;
+        
+        if(isalpha(currentChar)){
+           char shifted = currentChar +  key ;
+           
+           if(shifted > 'Z'){
+               shifted -= 26 ;
+           }
+           
+           encrypted_text += shifted ;
+        }
+        
+        else {
+             encrypted_text += currentChar  ;
+        }
+    }
+    
+    cout << "Encrypted Text is " << encrypted_text << endl ; 
+    
+    
+}

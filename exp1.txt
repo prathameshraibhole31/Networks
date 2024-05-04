@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std ;
+
+int main(){
+    
+    string password = "admin" ;
+    string entered_password ;
+    int tries = 3 ;
+    
+    
+    
+    while(tries > 0 ) {
+        
+        cout << "Enter Password" << endl ;
+    cin >> entered_password ;
+    
+    int len = entered_password.length();
+    
+    for(int i = 0 ; i<len ; i++){
+        cout << "*" ;
+    }
+    cout << endl ;
+        
+        
+        if(password == entered_password){
+            cout << "Correct Password" << endl ;
+            break ;
+        }
+        else {
+            cout << "Wrong Password " ;
+            tries-- ;
+            cout << "Tries Left :" << tries << endl ;
+        }
+        if(tries==0){
+            cout << "Access Denied" << endl ;
+        }
+    }
+    
+    return 0 ;
+} 
